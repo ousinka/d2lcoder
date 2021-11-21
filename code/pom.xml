@@ -1,0 +1,130 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.d2lcoder</groupId>
+	<artifactId>d2l</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	<name>d2lcoder</name>
+	<description>Java开发者动手学深度学习</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+
+		<djl.version>0.14.0</djl.version>
+		<tablesaw.version>0.38.1</tablesaw.version>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>djl.ai</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</repository>
+	</repositories>
+	
+	<!-- 依赖声明 -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>ai.djl</groupId>
+				<artifactId>bom</artifactId>
+				<version>${djl.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	<dependencies>
+			<dependency>
+			<groupId>tech.tablesaw</groupId>
+			<artifactId>tablesaw-jsplot</artifactId>
+			<version>${tablesaw.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>ai.djl</groupId>
+			<artifactId>api</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>ai.djl</groupId>
+			<artifactId>model-zoo</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>ai.djl</groupId>
+			<artifactId>basicdataset</artifactId>
+		</dependency>
+
+
+		<!-- paddlepaddle -->
+		<dependency>
+			<groupId>ai.djl.paddlepaddle</groupId>
+			<artifactId>paddlepaddle-model-zoo</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>ai.djl.paddlepaddle</groupId>
+			<artifactId>paddlepaddle-engine</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>ai.djl.paddlepaddle</groupId>
+			<artifactId>paddlepaddle-native-auto</artifactId>
+		</dependency>
+
+		<!-- pytorch -->
+		<dependency>
+			<groupId>ai.djl.pytorch</groupId>
+			<artifactId>pytorch-engine</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>ai.djl.pytorch</groupId>
+			<artifactId>pytorch-native-auto</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>ai.djl.pytorch</groupId>
+			<artifactId>pytorch-model-zoo</artifactId>
+		</dependency>
+
+		<!-- mxnet -->
+		<dependency>
+			<groupId>ai.djl.mxnet</groupId>
+			<artifactId>mxnet-engine</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ai.djl.mxnet</groupId>
+			<artifactId>mxnet-model-zoo</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ai.djl.mxnet</groupId>
+			<artifactId>mxnet-native-auto</artifactId>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<modules>
+		<module>d2lcoder-ndarray</module>
+	</modules>
+</project>
