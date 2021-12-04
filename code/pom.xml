@@ -126,5 +126,6 @@
 	</build>
 	<modules>
 		<module>d2lcoder-ndarray</module>
+		<module>d2lcoder-linear-regression</module>
 	</modules>
 </project>

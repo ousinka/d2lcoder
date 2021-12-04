@@ -10,4 +10,5 @@ target
 .factorypath
 /logs
 *.iml
+models
 node_modules
